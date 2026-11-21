@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/api/cupones/validar/{{codigoCupon}}"
+method: GET
+order: 3000

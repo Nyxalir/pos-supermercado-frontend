@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productos/{{productoId}}?categoriaId={{categoriaId}}"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  categoriaId: "{{categoriaId}}"
+body:
+  type: text
+  content: |-
+    {
+      "codigoBarras": "{{codigoBarras}}",
+      "nombre": "Producto actualizado desde Postman",
+      "categoria": { "id": {{categoriaId}} },
+      "precio": 3000,
+      "ivaPorcentaje": 19,
+      "stock": 12,
+      "stockMinimo": 2,
+      "activo": true
+    }
+order: 3000

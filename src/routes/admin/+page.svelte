@@ -510,7 +510,7 @@
 	/* Modals */
 	.modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 24px; background: rgba(15, 23, 42, .45); backdrop-filter: blur(4px); }
 	.modal-backdrop { position: absolute; inset: 0; }
-	.modal-card { width: min(560px, 92%); max-height: 90vh; overflow: auto; border-radius: 16px; background: #fff; box-shadow: 0 20px 50px rgba(2, 6, 23, .18); display: flex; flex-direction: column; }
+	.modal-card { position: relative; z-index: 1; width: min(560px, 92%); max-height: 90vh; overflow: auto; border-radius: 16px; background: #fff; box-shadow: 0 20px 50px rgba(2, 6, 23, .18); display: flex; flex-direction: column; }
 	.modal-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eceef0; padding: 20px 24px; }
 	.modal-head .kicker { margin: 0; }
 	.modal-head h2 { margin: 2px 0 0; font-size: 19px; letter-spacing: -.02em; }

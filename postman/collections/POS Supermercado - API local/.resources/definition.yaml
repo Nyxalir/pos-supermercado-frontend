@@ -1,0 +1,9 @@
+$kind: collection
+description: Peticiones de ejemplo para probar la API del backend. Inicia primero Spring Boot y PostgreSQL en localhost:8080. Ejecuta Crear producto antes de Actualizar, Registrar venta y Desactivar/Reactivar.
+variables:
+  baseUrl: http://localhost:8080
+  categoriaId: "1"
+  productoId: ""
+  codigoBarras: ""
+  codigoCupon: BIENVENIDO10
+  ventaId: ""

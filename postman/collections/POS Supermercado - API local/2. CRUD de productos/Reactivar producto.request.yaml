@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productos/{{productoId}}/reactivar"
+method: PATCH
+order: 5000

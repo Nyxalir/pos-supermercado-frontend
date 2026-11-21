@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "documentoCliente": "1234567890",
+      "codigoCupon": "{{codigoCupon}}",
+      "items": [
+        { "productoId": {{productoId}}, "cantidad": 1 }
+      ],
+      "pago": {
+        "metodo": "EFECTIVO",
+        "recibido": 100000
+      }
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      if (pm.response.code === 201) {
+        const venta = pm.response.json();
+        pm.collectionVariables.set('ventaId', venta.id);
+        console.log('Venta creada. ID guardado:', venta.id);
+      }
+    language: text/javascript
+order: 1000

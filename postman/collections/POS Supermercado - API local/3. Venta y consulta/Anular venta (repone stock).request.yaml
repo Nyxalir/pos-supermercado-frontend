@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/api/ventas/{{ventaId}}/anular"
+method: POST
+order: 3000

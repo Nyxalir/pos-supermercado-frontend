@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productos?categoriaId={{categoriaId}}"
+method: POST
+headers:
+  Content-Type: application/json
+queryParams:
+  categoriaId: "{{categoriaId}}"
+body:
+  type: text
+  content: |-
+    {
+      "codigoBarras": "{{codigoBarras}}",
+      "nombre": "Producto de prueba Postman",
+      "categoria": { "id": {{categoriaId}} },
+      "precio": 2500,
+      "ivaPorcentaje": 19,
+      "stock": 10,
+      "stockMinimo": 2,
+      "activo": true
+    }
+scripts:
+  - type: beforeRequest
+    code: pm.collectionVariables.set('codigoBarras', 'PM-' + Date.now());
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      if (pm.response.code === 201) {
+        const producto = pm.response.json();
+        pm.collectionVariables.set('productoId', producto.id);
+        console.log('Producto creado. ID guardado:', producto.id);
+      }
+    language: text/javascript
+order: 1000
